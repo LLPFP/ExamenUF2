@@ -63,7 +63,7 @@ h1 {
   background-color: rgb(255, 255, 255);
   border: 1px solid rgb(255, 255, 255);
   border-radius: 5px;
-  opacity: 0;
+
   z-index: -1;
 }
 
@@ -76,8 +76,8 @@ h1 {
   font-size: 100px;
   margin-top: 40px;
   position: absolute;
-  animation-name: agujaAzul;
-  animation-duration: 25s;
+  animation-name: agujas;
+  animation-duration: 20s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
@@ -93,9 +93,14 @@ h1 {
   margin-top: 90px;
   z-index: -1;
   position: absolute;
+  animation-name: agujas;
+  animation-duration: 160s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
 }
 
-@keyframes agujaAzul {
+@keyframes agujas {
   from {
     transform: rotate(0deg);
   }
@@ -104,40 +109,16 @@ h1 {
   }
 }
 
-@keyframes desplazar {
-  from {
-    opacity: 0;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(100px);
-  }
-}
-
-@keyframes desplazar2 {
-  from {
-    opacity: 1;
-    z-index: 15;
-    transform: translateX(100px);
-  }
-  to {
-    opacity: 0;
-    z-index: -1;
-    transform: translateX(0px);
-  }
-}
-
 .minutos:hover ~ #textoHover {
-  animation-name: desplazar;
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
+  z-index: 1;
+  opacity: 1;
+  transform: translatex(100px);
+  transition: all 1s ease-in-out;
 }
 
 .minutos:not(:hover) ~ #textoHover {
-  z-index: -14;
-  animation-name: desplazar2;
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
+  z-index: -1;
+  opacity: 0;
+  transform: translatex(0px);
   transition: all 1s ease-in-out;
 }
